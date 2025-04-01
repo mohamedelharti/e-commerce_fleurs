@@ -1,0 +1,53 @@
+/* Responsivité pour tablettes et mobiles */
+
+@media (max-width: 1024px) {
+    .product-grid {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .product {
+        width: 45%;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Ajustement de la bannière */
+    .banner {
+        height: 250px;
+    }
+    .banner-content {
+        padding: 15px;
+    }
+
+    /* Navigation mobile */
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Produits */
+    .product {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Bannière plus compacte */
+    .banner {
+        height: 200px;
+    }
+
+    /* Ajustement du texte */
+    .banner-content h2 {
+        font-size: 1.2rem;
+    }
+
+    /* Espacement général */
+    .featured-products {
+        padding: 30px 10px;
+    }
+}
