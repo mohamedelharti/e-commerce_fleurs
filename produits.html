@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos Fleurs</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <header>
+        <h1>Nos Fleurs</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="produits.html">Nos Fleurs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="products">
+        <div class="banner">
+            <div class="banner-content">
+                <h2>Découvrez notre collection</h2>
+            
+                <!-- Filtre par catégorie -->
+                <div class="filter-container">
+                <label for="category">Filtrer par catégorie :</label>
+                <select id="category" onchange="filterProducts()">
+                    <option value="all">Toutes</option>
+                    <option value="roses">Roses</option>
+                    <option value="tulipes">Tulipes</option>
+                    <option value="orchidees">Orchidées</option>
+                </select>
+                </div>
+            </div>
+        </div>
+        
+        <div class="product-grid">
+            <div class="product" data-category="roses">
+                <img src="images/1.jpg" alt="Bouquet de roses">
+                <h3>Bouquet de Roses</h3>
+                <p>À partir de 250 DH</p>
+            </div>
+            <div class="product" data-category="tulipes">
+                <img src="images/2.jpg" alt="Bouquet de tulipes">
+                <h3>Bouquet de Tulipes</h3>
+                <p>À partir de 200 DH</p>
+            </div>
+            <div class="product" data-category="roses">
+                <img src="images/3.jpg" alt="Bouquet de lilas">
+                <h3>Bouquet de Lilas</h3>
+                <p>À partir de 300 DH</p>
+            </div>
+            <div class="product" data-category="orchidees">
+                <img src="images/1.png" alt="Orchidée">
+                <h3>Orchidée Élite</h3>
+                <p>À partir de 350 DH</p>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Fleuriste. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        function filterProducts() {
+            let category = document.getElementById("category").value;
+            let products = document.querySelectorAll(".product");
+            
+            products.forEach(product => {
+                if (category === "all" || product.dataset.category === category) {
+                    product.style.display = "block";
+                } else {
+                    product.style.display = "none";
+                }
+            });
+        }
+    </script>
+</body>
+</html>

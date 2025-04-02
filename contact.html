@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fleuriste - Accueil</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/animations.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <h1>Bienvenue chez Fleuriste</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="produits.html">Nos Fleurs</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <!-- Bannière animée -->
+    <section class="banner">
+        <div class="banner-content">
+            <h2>Des fleurs fraîches pour toutes les occasions</h2>
+            <p>Découvrez notre collection exclusive</p>
+            <a href="produits.html" class="btn">Voir nos fleurs</a>
+        </div>
+    </section>
+    
+    <!-- Formulaire de contact -->
+    <section class="contact">
+        <h2>Envoyez-nous un message</h2>
+        <form action="#" method="POST" class="contact-form" onsubmit="return validateForm(event)">
+            <label for="name">Nom :</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email :</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message :</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+
+            <button type="submit">Envoyer</button>
+            <p class="confirmation-message" id="confirmation">Votre message a bien été envoyé !</p>
+        </form>
+    </section>
+    
+    <!-- Pied de page -->
+    <footer>
+        <p>&copy; 2025 Fleuriste. Tous droits réservés.</p>
+    </footer>
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            let name = document.getElementById('name').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let message = document.getElementById('message').value.trim();
+            let confirmation = document.getElementById('confirmation');
+            
+            if (name === "" || email === "" || message === "") {
+                alert("Tous les champs doivent être remplis !");
+                return false;
+            }
+            
+            confirmation.style.display = "block";
+            return false;
+        }
+    </script>
+</body>
+</html>
